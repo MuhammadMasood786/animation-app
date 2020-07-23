@@ -20,7 +20,7 @@ function App() {
     onReady: ({ animation }) => animation.currentTime = animation.effect.getTiming().duration / 2,
   });
   // For Sun
-  const { ref: foreground3Ref, getAnimation: fore3Animation } = useWebAnimations({
+  const { ref: foreground3Ref } = useWebAnimations({
     keyframes: { transform: ['translateX(0)', 'translateX(-100%)'] },
     timing: { duration: 3000, iterations: Infinity, },
     onReady: ({ animation }) => animation.currentTime = animation.effect.getTiming().duration / 2,
