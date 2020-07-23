@@ -29,6 +29,9 @@ function App() {
     if (fore1Animation().playbackRate > 0.4) {
       fore1Animation().updatePlaybackRate(fore1Animation().playbackRate * 0.9);
     }
+    if (fore2Animation().playbackRate > 0.4) {
+      fore2Animation().updatePlaybackRate(fore2Animation().playbackRate * 0.9);
+    }
   }
 
   const play = () => {
