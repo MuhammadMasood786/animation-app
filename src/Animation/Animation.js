@@ -7,15 +7,21 @@ import useWebAnimations from "@wellyshen/use-web-animations";
 
 
 function App() {
-
+  //  For Car
   const { ref: foreground1Ref, getAnimation: fore1Animation } = useWebAnimations({
     keyframes: { transform: ['translateX(0)', 'translateX(200%)'] },
     timing: { duration: 2000, iterations: Infinity, },
     onReady: ({ animation }) => animation.currentTime = animation.effect.getTiming().duration / 2,
   });
-
+  // For Ship
   const { ref: foreground2Ref, getAnimation: fore2Animation } = useWebAnimations({
     keyframes: { transform: ['translateX(0)', 'translateX(200%)'] },
+    timing: { duration: 3000, iterations: Infinity, },
+    onReady: ({ animation }) => animation.currentTime = animation.effect.getTiming().duration / 2,
+  });
+  // For Sun
+  const { ref: foreground3Ref, getAnimation: fore3Animation } = useWebAnimations({
+    keyframes: { transform: ['translateX(0)', 'translateX(-100%)'] },
     timing: { duration: 3000, iterations: Infinity, },
     onReady: ({ animation }) => animation.currentTime = animation.effect.getTiming().duration / 2,
   });
@@ -52,7 +58,7 @@ function App() {
         <button type="button" className="btn btn-outline-danger mt-2" onClick={speedUp} onTouchEnd={speedUp}>Speed Up</button>
         <button type="button" className="btn btn-outline-warning mt-2" onClick={speedDown} onTouchEnd={speedDown}>Speed Down</button>
       </div>
-      <div className="sun-div">
+      <div className="sun-div" ref={foreground3Ref}>
         <img src={Sun} alt="Sun" width={250} height={250} />
       </div>
       <div className=""  >
